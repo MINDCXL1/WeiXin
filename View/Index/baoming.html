@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<meta name="format-detection" content="telephone=no">
+
+<title>专题页</title>
+
+<link rel="stylesheet" type="text/css" href="/wxlist/Public/css/Activity.css">
+
+</head>
+
+<body>
+
+<div class="banner">
+
+ <img src="/wxlist/Public/images/banner.jpg" />
+
+</div>
+
+<div id="main">
+
+ <div class="main">
+
+ <h2>山东交通技师学院软件商学院软件开发专业-校企合作</h2>
+
+ <p style=" font-weight:bold; color:#ac8104; margin-top:3%;">报名须知：</p>
+
+ <p>常年招收春季生和秋季生，春季报名时间3月1日，秋季报名7月1日！</p>
+
+ <p>招收人员：中专班：当年或往年的初中毕业生，大专班：当年或往年高中毕业生或中专生。</p>
+
+ <p style="margin-top:2%;">现有优惠活动，入学即送价值4888的笔记本电脑一台！
+ </p>
+
+ <p style="margin-top:2%; text-align:center; font-size:1.3em;">报名总人数：1260人</p>
+<form action="{:U('index/newbaoming')}" method="post" class="basic-grey">
+<input type="hidden" name="openid" value="{$list}">
+ <table border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+    <td><input name="username" placeholder="&nbsp姓名" type="text" class="srk1"/></td>
+
+  </tr>
+  <tr>
+
+    <td style="margin-top:2%; color:#7b6a01; font-size:1.2em;padding-top: 5px;"><input name="job" type="radio" value="家长" >家长<input name="job" value="学生" type="radio" style="margin-left: 20px;">学生</td>
+
+  </tr>
+
+  <tr>
+
+    <td><input name="tel" placeholder="&nbsp电话" type="text" class="srk1"/></td>
+
+  </tr>
+
+  <tr>
+
+    <td><input name="site" placeholder="&nbsp地区" type="text" class="srk1"/></td>
+
+  </tr>
+
+  <tr>
+
+    <td><input value="点击报名" id="button" type="submit" class="an" /></td>
+
+  </tr>
+
+</table>
+</form>
+ </div>
+
+</div>
+
+</body>
+<script type="text/javascript">
+    $('#button').click(function(){
+        $.ajax({
+            url:'{:U('index/newbaoming')}',
+            type:'POST',
+            data:$('#wishform').serialize(),
+            success:function(result){
+                //alert(result.msg);
+                switch(result.status){
+                    case 1 :layer.msg(result.msg, {
+                        offset: 't',
+                        anim: 6
+                    });
+                    location.href="http://www.514superhero.cn/wxlist/index.php/home/index/baoming"
+                    break;
+                    case 2 :layer.msg(result.msg, {
+                        offset: 't',
+                        anim: 6
+                    });
+                    location.href="http://www.514superhero.cn/wxlist/index.php/home/index/baoming"
+                        break;
+                    
+                }
+            },
+            error:function(result){
+
+            }
+        });
+    })
+    </script>
+</html>
+

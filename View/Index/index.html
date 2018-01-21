@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+<link rel="stylesheet" type="text/css" href="/wxlist/Public/css/style.css" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link rel="apple-touch-icon-precomposed" href="/wxlist/Public/images/favicon.ico">
+<script>
+var logined = 0
+</script>
+<title>行业动态</title>
+</head>
+
+<body>
+<script>
+var now_page = 1,
+search_value = '';
+</script>
+
+	 
+	<div id="container">
+		  
+		<div id="content">	
+			<div id="list">
+				<ul>
+				<foreach name="list" item="list">
+					<li>
+						<div class="wrap">
+							<a class="alist" vhref="{:U('index/content',['id'=>$list['id'],'oid'=>$openid['id']])}">
+								<div class="list_litpic fl"><img src="{$list.thumb_url}" /></div>
+								<div class="list_info">
+									<h4>{$list.title}</h4>
+									
+									 <div class="list_info_i">
+										<dl class="list_info_views">
+											<dt></dt>
+											<dd>6907</dd>
+											<div class="clear"></div>
+										</dl>
+										<dl class="list_info_comment">
+											<dt></dt>
+											<dd>5</dd>
+											<div class="clear"></div>
+										</dl>
+										<dl class="list_info_like">
+											<dt></dt>
+											<dd>8</dd>
+											<div class="clear"></div>
+										</dl>
+										<div class="clear"></div>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</a>
+						</div>
+					</li>
+					</foreach>
+				</ul>
+				<div class="list_loading"><i></i><span>努力加载中...</span></div>
+			</div>
+		</div>
+		
+		<div class="push_msk"></div>
+	</div>
+
+	 
+	
+	<div id="newwrap_t" class="newwrap">
+		<div class="newwrap_msk"></div>
+		<iframe id="newwrap" frameborder="0" width="100%" height="100%"></iframe>
+	</div>
+	 
+	<div class="loading_dark"></div>
+	<div id="loading_mask">
+		<div class="loading_mask">
+			<ul class="anm">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<script language="javascript" src="/wxlist/Public/js/zepto.min.js"></script>
+	<script language="javascript" src="/wxlist/Public/js/fx.js"></script>
+	<script language="javascript" src="/wxlist/Public/js/script.js"></script>
+	
+</body>
+</html>
